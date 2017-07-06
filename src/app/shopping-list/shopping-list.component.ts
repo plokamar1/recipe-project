@@ -7,12 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingListComponent implements OnInit {
   shoppingList = [];
-  newProduct = '';
-  constructor() { }
+  newProduct = null;
+  isEmpty = true;
+
+  constructor() {
+
+   }
 
   ngOnInit() {
   }
-  addNewProduct(){
+  checkEmpty() {
+    this.newProduct === null ? this.isEmpty = true : this.isEmpty = false;
+  }
+  addNewProduct() {
     this.shoppingList.push(this.newProduct);
   }
 }

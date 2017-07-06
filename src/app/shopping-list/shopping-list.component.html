@@ -1,12 +1,15 @@
-<p>
-  shopping-list works!
-</p>
-
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <input type="text" [(ngModel)] = "newProduct">
-      <button class="btn btn-success">Add</button>
+      <label>Make your Shopping List!</label>
+      <hr>
+      <input type="text" [(ngModel)] = "newProduct" (keypress)="checkEmpty()">
+      <button type="button" 
+      class="btn btn-success" 
+      (click)="addNewProduct()" 
+      [disabled]="isEmpty" >Add</button>
+      
+      <p *ngFor="let product of shoppingList">{{ product }}</p>
     </div>
   </div>
 </div>
