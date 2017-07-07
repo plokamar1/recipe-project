@@ -1,6 +1,5 @@
-<!--<div class="container">
-  <div class="row">
-    <div class="col-xs-12">-->
+<!--
+
       <label>Make your Shopping List!</label>
       <hr>
       <input type="text" [(ngModel)] = "newProduct" (keypress)="checkEmpty()">
@@ -14,8 +13,16 @@
           <a href="#">{{ product }}</a>
         </li>
       </ul>
-<!--
-    </div>
+-->
+<div class="row">
+  <div class="col-xs-10">
+    <app-shopping-list-edit></app-shopping-list-edit>
+    <hr>
+    <ul class="list-group">
+      <a class="list-group-item" style="cursor: pointer;"
+      *ngFor="let ingredient of ingredients">
+        {{ingredient.name}} ({{ingredient.amount}})
+      </a>
+    </ul>
   </div>
 </div>
--->
