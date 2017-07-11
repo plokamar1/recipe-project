@@ -24,6 +24,9 @@ export class ShoppingListComponent implements OnInit {
 
   ngOnInit() {
   }
+  addToIngredients(newIngredient: Ingredient){
+    this.ingredients.push(newIngredient);
+  }
 /*  checkEmpty() {
     this.newProduct === null ? this.isEmpty = true : this.isEmpty = false;
   }
