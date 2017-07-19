@@ -9,8 +9,4 @@ export class RecipeService {
 
   selectedRecipe = new EventEmitter<Recipe>();
 
-  emitSelectedRecipe(selectedRecipe: Recipe) {
-    this.selectedRecipe.emit(selectedRecipe);
-  }
-
 }
