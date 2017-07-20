@@ -11,8 +11,6 @@ import {RecipeService} from "../recipe.service";
 export class RecipeListComponent implements OnInit {
 
   recipes: Recipe[] = [];
-  @Output() selectedRecipe = new EventEmitter<Recipe>();
-
   constructor( private recipeService: RecipeService) {
 
   }
