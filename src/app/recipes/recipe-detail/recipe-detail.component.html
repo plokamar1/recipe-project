@@ -1,4 +1,4 @@
-<div *ngIf="recipe">
+<div *ngIf="recipe; else infoText">
   <div class="row">
     <div class="col-xs-5">
       <img src="{{recipe.imagePath}}"
@@ -36,3 +36,6 @@
   </div>
 
 </div>
+<ng-template #infoText>
+  <p>Please select a Recipe!</p>
+</ng-template>
