@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import { Ingredient } from '../../shared/ingredient.model'
-import {isNumber} from "util";
+import {ShoppingListService} from "../shopping-list.service";
 
 @Component({
   selector: 'app-shopping-list-edit',
@@ -8,13 +8,14 @@ import {isNumber} from "util";
 })
 
 export class ShoppingListEditComponent {
-  ingredientName: string = '';
-  ingredientAmount: number;
-  ingredient: Ingredient;
-  @Output() addedIngredient = new EventEmitter<Ingredient>();
+  ingredient: Ingredient ;
+/*  @Output() addedIngredient = new EventEmitter<Ingredient>();*/
 
-  addIngredient(ingredientName: HTMLInputElement, ingredientAmount: HTMLInputElement){
+  constructor( private shoppingListService: ShoppingListService) {}
+
+  addIngredient(ingredientName: HTMLInputElement, ingredientAmount: HTMLInputElement) {
     this.ingredient = new Ingredient(ingredientName.value, parseInt(ingredientAmount.value));
-    this.addedIngredient.emit(this.ingredient);
+    this.shoppingListService.addIngredient(this.ingredient);
+    /*this.addedIngredient.emit(this.ingredient);*/
   }
 }
