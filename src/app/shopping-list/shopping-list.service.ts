@@ -17,4 +17,9 @@ export class ShoppingListService {
     this.onIngredientAdded.emit(true);
   }
 
+  newShoppingList( ingredients: Ingredient[]) {
+    this.ingredients = ingredients;
+    this.onIngredientAdded.emit(true);
+  }
+
 }
